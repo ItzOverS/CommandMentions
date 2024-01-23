@@ -1,7 +1,0 @@
-name: CommandMentions
-version: '1.0'
-main: me.overlight.commandmentions.CommandMentions
-api-version: '1.19'
-commands:
-  cmrl:
-    aliases: []
