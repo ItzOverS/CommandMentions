@@ -1,0 +1,16 @@
+cmd-1:
+  command: "/eco"
+  check-mode: "contains" # Contains OR StartWith OR EndWith
+  discord-webhook: "" # Make this string empty to disable webhook sending...
+  actions:
+    - "[BLOCK]"
+    - "[COMMAND] kick %player% Using illegal command"
+cmd-2:
+  command:
+    - "/rl"
+    - "/reload"
+  check-mode: "contains" # Contains OR StartWith OR EndWith
+  discord-webhook: "" # Make this string empty to disable webhook sending...
+  actions:
+    - "[BLOCK]"
+    - "[COMMAND] kick %player% Using illegal command"
