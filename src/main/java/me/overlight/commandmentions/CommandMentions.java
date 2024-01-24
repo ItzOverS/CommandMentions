@@ -8,6 +8,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
@@ -37,6 +38,7 @@ public final class CommandMentions extends JavaPlugin {
             ConfigurationSection q = f.getConfigurationSection(key);
             c.setCheckMode(CommandCheck.CheckMode.valueOf((q.getString("check-mode", "contains").toLowerCase())));
             c.setDiscordWebhook(q.getString("discord-webhook", null));
+            c.setDisEmbedColor(Color.getColor(q.getString("discord-webhook", "gray")));
             c.getCommands().addAll(q.isList("command")? q.getStringList("command"): Collections.singletonList(q.getString("command")));
             q.getStringList("actions").forEach(r -> {
                 Action a = null;

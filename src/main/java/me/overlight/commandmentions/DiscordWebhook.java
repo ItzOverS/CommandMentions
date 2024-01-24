@@ -20,24 +20,29 @@ public class DiscordWebhook {
         this.url = url;
     }
 
-    public void setContent(String content) {
+    public DiscordWebhook setContent(String content) {
         this.content = content;
+        return this;
     }
 
-    public void setUsername(String username) {
+    public DiscordWebhook setUsername(String username) {
         this.username = username;
+        return this;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
+    public DiscordWebhook setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+        return this;
     }
 
-    public void setTts(boolean tts) {
+    public DiscordWebhook setTts(boolean tts) {
         this.tts = tts;
+        return this;
     }
 
-    public void addEmbed(EmbedObject embed) {
+    public DiscordWebhook addEmbed(EmbedObject embed) {
         this.embeds.add(embed);
+        return this;
     }
 
     public void execute() throws IOException {

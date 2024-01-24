@@ -2,6 +2,7 @@ cmd-1:
   command: "/eco"
   check-mode: "contains" # Contains OR StartWith OR EndWith
   discord-webhook: "" # Make this string empty to disable webhook sending...
+  discord-embed-color: RED
   actions:
     - "[BLOCK]"
     - "[COMMAND] kick %player% Using illegal command"

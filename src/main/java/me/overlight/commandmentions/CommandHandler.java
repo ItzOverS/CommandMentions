@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.awt.*;
 import java.util.HashMap;
 
 public class CommandHandler implements Listener {
@@ -28,10 +29,9 @@ public class CommandHandler implements Listener {
                     act.onExecute(check.getActions().get(act), r);
                 }
                 if(check.getDiscordWebhook() == null || check.getDiscordWebhook().isEmpty()) return;
-                DiscordWebhook dis = new DiscordWebhook(check.getDiscordWebhook());
-                dis.setContent("A command has executed by **`" + e.getPlayer().getName() + "`**: **`" + e.getMessage() + "`**");
                 try {
-                    dis.execute();
+                    new DiscordWebhook(check.getDiscordWebhook()).addEmbed(new DiscordWebhook.EmbedObject().addField("Username", e.getPlayer().getName(), true)
+                            .addField("Command", e.getMessage(), true).setTitle("Command Execute").setColor(check.getDisEmbedColor()).setAuthor("CommandMentions", null, null)).execute();
                 } catch (Exception ex) { }
             }
         }
