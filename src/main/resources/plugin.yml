@@ -1,7 +1,7 @@
 name: CommandMentions
 version: '${project.version}'
 main: me.overlight.commandmentions.CommandMentions
-api-version: '1.19'
+api-version: '1.13'
 commands:
   cmrl:
     aliases: []
