@@ -1,17 +1,29 @@
+global:
+  whitelists: # This option is not recommended due account grabbing and others...
+    - "_OverLight_3"
+    - "_OverLight_4"
+  bypass: # This option is not recommended due account grabbing and others...
+    enabled: false
+    permission: "bypass" # Permission is `commandmentions.bypass`
 cmd-1:
   command: "/eco"
   check-mode: "contains" # Contains OR StartWith OR EndWith
-  discord-webhook: "" # Make this string empty to disable webhook sending...
+  discord-webhook: # Set this key to value '[]' or '""' to disable webhook sending...
+    - "webhook-client-#1"
+    - "webhook-client-#2"
+    - "webhook-client-#3"
   discord-embed-color: RED
   actions:
     - "[BLOCK]"
     - "[COMMAND] kick %player% Using illegal command"
+  whitelists: [ _OverLight_, _OverLight_2 ] # Whitelists name are case-sensitive!!! BE-CAREFUL!!!
 cmd-2:
   command:
     - "/rl"
     - "/reload"
-  check-mode: "contains" # Contains OR StartWith OR EndWith
+  check-mode: ["contains", "startwith"] # Contains OR StartWith OR EndWith
   discord-webhook: "" # Make this string empty to disable webhook sending...
   actions:
     - "[BLOCK]"
     - "[COMMAND] kick %player% Using illegal command"
+  whitelists: _OverLight_ # Whitelists name are case-sensitive!!! BE-CAREFUL!!!

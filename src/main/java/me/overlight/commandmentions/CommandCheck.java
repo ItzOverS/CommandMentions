@@ -13,9 +13,10 @@ import java.util.List;
 public class CommandCheck {
     public final static List<CommandCheck> checks = new ArrayList<>();
     private final List<String> commands = new ArrayList<>();
-    private CheckMode checkMode;
+    private List<CheckMode> checkModes = new ArrayList<>();
     private Color disEmbedColor;
-    private String discordWebhook;
+    private List<String> discordWebhooks = new ArrayList<>();
+    private final List<String> whitelists = new ArrayList<>();
     private final HashMap<Action, String> actions = new HashMap<>();
 
     public boolean hasAction(Class<? extends Action> cls) {
